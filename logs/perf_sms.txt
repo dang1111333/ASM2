@@ -1,0 +1,3143 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 22  of event 'cpu_atom/cycles/P'
+# Event count (approx.): 4477005
+#
+# Children      Self  Command      Shared Object         Symbol                                  
+# ........  ........  ...........  ....................  ........................................
+#
+    74.03%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] entry_SYSCALL_64_after_hwframe
+            |
+            ---entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               |          
+               |--62.86%--x64_sys_call
+               |          |          
+               |          |--34.57%--__x64_sys_clone3
+               |          |          __do_sys_clone3
+               |          |          kernel_clone
+               |          |          |          
+               |          |          |--22.92%--copy_process
+               |          |          |          perf_event_init_task
+               |          |          |          perf_event_init_context.constprop.0
+               |          |          |          inherit_task_group.isra.0
+               |          |          |          inherit_event.isra.0
+               |          |          |          perf_event_alloc
+               |          |          |          perf_init_event
+               |          |          |          perf_try_init_event
+               |          |          |          x86_pmu_event_init
+               |          |          |          |          
+               |          |          |          |--12.63%--allocate_fake_cpuc
+               |          |          |          |          __pi_memset
+               |          |          |          |          
+               |          |          |           --10.29%--adl_hw_config
+               |          |          |          
+               |          |           --11.65%--wake_up_new_task
+               |          |                     select_task_rq_fair
+               |          |                     sched_balance_find_dst_group
+               |          |                     update_sg_wakeup_stats
+               |          |          
+               |          |--8.75%--__x64_sys_mprotect
+               |          |          do_mprotect_pkey
+               |          |          mprotect_fixup
+               |          |          perf_event_mmap
+               |          |          perf_event_mmap_event
+               |          |          perf_iterate_sb.constprop.0
+               |          |          perf_event_mmap_output
+               |          |          
+               |          |--8.38%--__x64_sys_openat
+               |          |          do_sys_openat2
+               |          |          |          
+               |          |          |--5.58%--do_file_open
+               |          |          |          path_openat
+               |          |          |          |          
+               |          |          |          |--2.79%--path_init
+               |          |          |          |          nd_jump_root
+               |          |          |          |          set_root
+               |          |          |          |          
+               |          |          |           --2.79%--alloc_empty_file
+               |          |          |                     init_file
+               |          |          |                     security_file_alloc
+               |          |          |                     kmem_cache_alloc_noprof
+               |          |          |          
+               |          |           --2.79%--getname_flags
+               |          |                     do_getname
+               |          |                     kmem_cache_alloc_noprof
+               |          |          
+               |          |--5.58%--__x64_sys_execve
+               |          |          do_execveat_common.isra.0
+               |          |          bprm_execve
+               |          |          bprm_execve.part.0
+               |          |          exec_binprm
+               |          |          load_elf_binary
+               |          |          |          
+               |          |          |--2.79%--load_elf_interp.isra.0
+               |          |          |          elf_load
+               |          |          |          vm_mmap
+               |          |          |          vm_mmap_pgoff
+               |          |          |          do_mmap
+               |          |          |          mmap_region
+               |          |          |          __mmap_region
+               |          |          |          __mmap_setup
+               |          |          |          mas_prev
+               |          |          |          mas_prev_slot
+               |          |          |          
+               |          |           --2.79%--elf_load
+               |          |                     vm_mmap
+               |          |                     vm_mmap_pgoff
+               |          |                     do_mmap
+               |          |                     mmap_region
+               |          |                     __mmap_region
+               |          |                     perf_event_mmap
+               |          |                     perf_event_mmap_event
+               |          |                     perf_iterate_sb.constprop.0
+               |          |                     perf_iterate_ctx
+               |          |                     perf_event_mmap_output
+               |          |                     __perf_event_header__init_id
+               |          |                     __task_pid_nr_ns
+               |          |          
+               |          |--2.79%--__x64_sys_mq_open
+               |          |          do_mq_open
+               |          |          mqueue_file_open
+               |          |          dentry_open
+               |          |          alloc_empty_file
+               |          |          init_file
+               |          |          
+               |           --2.79%--__x64_sys_clock_nanosleep
+               |                     common_nsleep_timens
+               |                     hrtimer_nanosleep
+               |                     do_nanosleep
+               |                     schedule
+               |                     __schedule
+               |                     try_to_block_task.constprop.0.isra.0
+               |                     dequeue_task
+               |                     dequeue_task_rt
+               |          
+               |--2.79%--__x64_sys_mq_timedreceive
+               |          
+               |--2.79%--__x64_sys_mq_unlink
+               |          
+               |--2.79%--__x64_sys_clock_nanosleep
+               |          
+                --2.79%--exit_to_user_mode_loop
+
+    74.03%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] do_syscall_64
+            |
+            ---do_syscall_64
+               |          
+               |--62.86%--x64_sys_call
+               |          |          
+               |          |--34.57%--__x64_sys_clone3
+               |          |          __do_sys_clone3
+               |          |          kernel_clone
+               |          |          |          
+               |          |          |--22.92%--copy_process
+               |          |          |          perf_event_init_task
+               |          |          |          perf_event_init_context.constprop.0
+               |          |          |          inherit_task_group.isra.0
+               |          |          |          inherit_event.isra.0
+               |          |          |          perf_event_alloc
+               |          |          |          perf_init_event
+               |          |          |          perf_try_init_event
+               |          |          |          x86_pmu_event_init
+               |          |          |          |          
+               |          |          |          |--12.63%--allocate_fake_cpuc
+               |          |          |          |          __pi_memset
+               |          |          |          |          
+               |          |          |           --10.29%--adl_hw_config
+               |          |          |          
+               |          |           --11.65%--wake_up_new_task
+               |          |                     select_task_rq_fair
+               |          |                     sched_balance_find_dst_group
+               |          |                     update_sg_wakeup_stats
+               |          |          
+               |          |--8.75%--__x64_sys_mprotect
+               |          |          do_mprotect_pkey
+               |          |          mprotect_fixup
+               |          |          perf_event_mmap
+               |          |          perf_event_mmap_event
+               |          |          perf_iterate_sb.constprop.0
+               |          |          perf_event_mmap_output
+               |          |          
+               |          |--8.38%--__x64_sys_openat
+               |          |          do_sys_openat2
+               |          |          |          
+               |          |          |--5.58%--do_file_open
+               |          |          |          path_openat
+               |          |          |          |          
+               |          |          |          |--2.79%--path_init
+               |          |          |          |          nd_jump_root
+               |          |          |          |          set_root
+               |          |          |          |          
+               |          |          |           --2.79%--alloc_empty_file
+               |          |          |                     init_file
+               |          |          |                     security_file_alloc
+               |          |          |                     kmem_cache_alloc_noprof
+               |          |          |          
+               |          |           --2.79%--getname_flags
+               |          |                     do_getname
+               |          |                     kmem_cache_alloc_noprof
+               |          |          
+               |          |--5.58%--__x64_sys_execve
+               |          |          do_execveat_common.isra.0
+               |          |          bprm_execve
+               |          |          bprm_execve.part.0
+               |          |          exec_binprm
+               |          |          load_elf_binary
+               |          |          |          
+               |          |          |--2.79%--load_elf_interp.isra.0
+               |          |          |          elf_load
+               |          |          |          vm_mmap
+               |          |          |          vm_mmap_pgoff
+               |          |          |          do_mmap
+               |          |          |          mmap_region
+               |          |          |          __mmap_region
+               |          |          |          __mmap_setup
+               |          |          |          mas_prev
+               |          |          |          mas_prev_slot
+               |          |          |          
+               |          |           --2.79%--elf_load
+               |          |                     vm_mmap
+               |          |                     vm_mmap_pgoff
+               |          |                     do_mmap
+               |          |                     mmap_region
+               |          |                     __mmap_region
+               |          |                     perf_event_mmap
+               |          |                     perf_event_mmap_event
+               |          |                     perf_iterate_sb.constprop.0
+               |          |                     perf_iterate_ctx
+               |          |                     perf_event_mmap_output
+               |          |                     __perf_event_header__init_id
+               |          |                     __task_pid_nr_ns
+               |          |          
+               |          |--2.79%--__x64_sys_mq_open
+               |          |          do_mq_open
+               |          |          mqueue_file_open
+               |          |          dentry_open
+               |          |          alloc_empty_file
+               |          |          init_file
+               |          |          
+               |           --2.79%--__x64_sys_clock_nanosleep
+               |                     common_nsleep_timens
+               |                     hrtimer_nanosleep
+               |                     do_nanosleep
+               |                     schedule
+               |                     __schedule
+               |                     try_to_block_task.constprop.0.isra.0
+               |                     dequeue_task
+               |                     dequeue_task_rt
+               |          
+               |--2.79%--__x64_sys_mq_timedreceive
+               |          
+               |--2.79%--__x64_sys_mq_unlink
+               |          
+               |--2.79%--__x64_sys_clock_nanosleep
+               |          
+                --2.79%--exit_to_user_mode_loop
+
+    73.66%     0.00%  sms_app_x86  libc.so.6             [.] __clone3 (inlined)
+            |
+            ---__clone3 (inlined)
+               |          
+               |--39.09%--start_thread
+               |          |          
+               |          |--16.75%--processor_thread_func
+               |          |          |          
+               |          |          |--11.17%--log_message
+               |          |          |          _IO_new_fopen (inlined)
+               |          |          |          __fopen_internal (inlined)
+               |          |          |          |          
+               |          |          |          |--8.38%--_IO_new_file_fopen (inlined)
+               |          |          |          |          _IO_file_open
+               |          |          |          |          __libc_open64 (inlined)
+               |          |          |          |          entry_SYSCALL_64_after_hwframe
+               |          |          |          |          do_syscall_64
+               |          |          |          |          x64_sys_call
+               |          |          |          |          __x64_sys_openat
+               |          |          |          |          do_sys_openat2
+               |          |          |          |          |          
+               |          |          |          |          |--5.58%--do_file_open
+               |          |          |          |          |          path_openat
+               |          |          |          |          |          |          
+               |          |          |          |          |          |--2.79%--path_init
+               |          |          |          |          |          |          nd_jump_root
+               |          |          |          |          |          |          set_root
+               |          |          |          |          |          |          
+               |          |          |          |          |           --2.79%--alloc_empty_file
+               |          |          |          |          |                     init_file
+               |          |          |          |          |                     security_file_alloc
+               |          |          |          |          |                     kmem_cache_alloc_noprof
+               |          |          |          |          |          
+               |          |          |          |           --2.79%--getname_flags
+               |          |          |          |                     do_getname
+               |          |          |          |                     kmem_cache_alloc_noprof
+               |          |          |          |          
+               |          |          |           --2.79%--__libc_malloc (inlined)
+               |          |          |                     tcache_init (inlined)
+               |          |          |                     arena_get2 (inlined)
+               |          |          |                     _int_new_arena (inlined)
+               |          |          |                     new_heap (inlined)
+               |          |          |                     __mprotect
+               |          |          |                     asm_exc_page_fault
+               |          |          |          
+               |          |          |--2.79%--cb_pop
+               |          |          |          __futex_abstimed_wait_cancelable64 (inlined)
+               |          |          |          
+               |          |           --2.79%--__snprintf (inlined)
+               |          |                     __vsnprintf_internal
+               |          |                     __printf_buffer_snprintf_done (inlined)
+               |          |                     __printf_buffer
+               |          |                     __printf_buffer_write
+               |          |          
+               |          |--8.38%--sensor_thread_func
+               |          |          __clock_nanosleep (inlined)
+               |          |          entry_SYSCALL_64_after_hwframe
+               |          |          do_syscall_64
+               |          |          |          
+               |          |          |--2.79%--__x64_sys_clock_nanosleep
+               |          |          |          
+               |          |          |--2.79%--exit_to_user_mode_loop
+               |          |          |          
+               |          |           --2.79%--x64_sys_call
+               |          |                     __x64_sys_clock_nanosleep
+               |          |                     common_nsleep_timens
+               |          |                     hrtimer_nanosleep
+               |          |                     do_nanosleep
+               |          |                     schedule
+               |          |                     __schedule
+               |          |                     try_to_block_task.constprop.0.isra.0
+               |          |                     dequeue_task
+               |          |                     dequeue_task_rt
+               |          |          
+               |          |--5.58%--alert_thread_func
+               |          |          |          
+               |          |          |--2.79%--__mq_open (inlined)
+               |          |          |          entry_SYSCALL_64_after_hwframe
+               |          |          |          do_syscall_64
+               |          |          |          x64_sys_call
+               |          |          |          __x64_sys_mq_open
+               |          |          |          do_mq_open
+               |          |          |          mqueue_file_open
+               |          |          |          dentry_open
+               |          |          |          alloc_empty_file
+               |          |          |          init_file
+               |          |          |          
+               |          |           --2.79%--___mq_timedreceive_time64 (inlined)
+               |          |                     ___mq_timedreceive_time64 (inlined)
+               |          |                     entry_SYSCALL_64_after_hwframe
+               |          |                     do_syscall_64
+               |          |                     __x64_sys_mq_timedreceive
+               |          |          
+               |          |--2.79%--__res_thread_freeres
+               |          |          asm_exc_page_fault
+               |          |          exc_page_fault
+               |          |          do_user_addr_fault
+               |          |          handle_mm_fault
+               |          |          __handle_mm_fault
+               |          |          handle_pte_fault
+               |          |          do_fault
+               |          |          do_read_fault
+               |          |          filemap_map_pages
+               |          |          
+               |          |--2.79%--__stat64 (inlined)
+               |          |          
+               |           --2.79%--__mq_unlink (inlined)
+               |                     entry_SYSCALL_64_after_hwframe
+               |                     do_syscall_64
+               |                     __x64_sys_mq_unlink
+               |          
+                --34.57%--entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          x64_sys_call
+                          __x64_sys_clone3
+                          __do_sys_clone3
+                          kernel_clone
+                          |          
+                          |--22.92%--copy_process
+                          |          perf_event_init_task
+                          |          perf_event_init_context.constprop.0
+                          |          inherit_task_group.isra.0
+                          |          inherit_event.isra.0
+                          |          perf_event_alloc
+                          |          perf_init_event
+                          |          perf_try_init_event
+                          |          x86_pmu_event_init
+                          |          |          
+                          |          |--12.63%--allocate_fake_cpuc
+                          |          |          __pi_memset
+                          |          |          
+                          |           --10.29%--adl_hw_config
+                          |          
+                           --11.65%--wake_up_new_task
+                                     select_task_rq_fair
+                                     sched_balance_find_dst_group
+                                     update_sg_wakeup_stats
+
+    65.66%     2.79%  sms_app_x86  [kernel.kallsyms]     [.] x64_sys_call
+            |          
+            |--62.86%--x64_sys_call
+            |          |          
+            |          |--34.57%--__x64_sys_clone3
+            |          |          __do_sys_clone3
+            |          |          kernel_clone
+            |          |          |          
+            |          |          |--22.92%--copy_process
+            |          |          |          perf_event_init_task
+            |          |          |          perf_event_init_context.constprop.0
+            |          |          |          inherit_task_group.isra.0
+            |          |          |          inherit_event.isra.0
+            |          |          |          perf_event_alloc
+            |          |          |          perf_init_event
+            |          |          |          perf_try_init_event
+            |          |          |          x86_pmu_event_init
+            |          |          |          |          
+            |          |          |          |--12.63%--allocate_fake_cpuc
+            |          |          |          |          __pi_memset
+            |          |          |          |          
+            |          |          |           --10.29%--adl_hw_config
+            |          |          |          
+            |          |           --11.65%--wake_up_new_task
+            |          |                     select_task_rq_fair
+            |          |                     sched_balance_find_dst_group
+            |          |                     update_sg_wakeup_stats
+            |          |          
+            |          |--8.75%--__x64_sys_mprotect
+            |          |          do_mprotect_pkey
+            |          |          mprotect_fixup
+            |          |          perf_event_mmap
+            |          |          perf_event_mmap_event
+            |          |          perf_iterate_sb.constprop.0
+            |          |          perf_event_mmap_output
+            |          |          
+            |          |--8.38%--__x64_sys_openat
+            |          |          do_sys_openat2
+            |          |          |          
+            |          |          |--5.58%--do_file_open
+            |          |          |          path_openat
+            |          |          |          |          
+            |          |          |          |--2.79%--path_init
+            |          |          |          |          nd_jump_root
+            |          |          |          |          set_root
+            |          |          |          |          
+            |          |          |           --2.79%--alloc_empty_file
+            |          |          |                     init_file
+            |          |          |                     security_file_alloc
+            |          |          |                     kmem_cache_alloc_noprof
+            |          |          |          
+            |          |           --2.79%--getname_flags
+            |          |                     do_getname
+            |          |                     kmem_cache_alloc_noprof
+            |          |          
+            |          |--5.58%--__x64_sys_execve
+            |          |          do_execveat_common.isra.0
+            |          |          bprm_execve
+            |          |          bprm_execve.part.0
+            |          |          exec_binprm
+            |          |          load_elf_binary
+            |          |          |          
+            |          |          |--2.79%--load_elf_interp.isra.0
+            |          |          |          elf_load
+            |          |          |          vm_mmap
+            |          |          |          vm_mmap_pgoff
+            |          |          |          do_mmap
+            |          |          |          mmap_region
+            |          |          |          __mmap_region
+            |          |          |          __mmap_setup
+            |          |          |          mas_prev
+            |          |          |          mas_prev_slot
+            |          |          |          
+            |          |           --2.79%--elf_load
+            |          |                     vm_mmap
+            |          |                     vm_mmap_pgoff
+            |          |                     do_mmap
+            |          |                     mmap_region
+            |          |                     __mmap_region
+            |          |                     perf_event_mmap
+            |          |                     perf_event_mmap_event
+            |          |                     perf_iterate_sb.constprop.0
+            |          |                     perf_iterate_ctx
+            |          |                     perf_event_mmap_output
+            |          |                     __perf_event_header__init_id
+            |          |                     __task_pid_nr_ns
+            |          |          
+            |          |--2.79%--__x64_sys_mq_open
+            |          |          do_mq_open
+            |          |          mqueue_file_open
+            |          |          dentry_open
+            |          |          alloc_empty_file
+            |          |          init_file
+            |          |          
+            |           --2.79%--__x64_sys_clock_nanosleep
+            |                     common_nsleep_timens
+            |                     hrtimer_nanosleep
+            |                     do_nanosleep
+            |                     schedule
+            |                     __schedule
+            |                     try_to_block_task.constprop.0.isra.0
+            |                     dequeue_task
+            |                     dequeue_task_rt
+            |          
+             --2.79%--__clone3 (inlined)
+                       start_thread
+                       sensor_thread_func
+                       __clock_nanosleep (inlined)
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       __x64_sys_clock_nanosleep
+
+    39.09%     0.00%  sms_app_x86  libc.so.6             [.] start_thread
+            |
+            ---start_thread
+               |          
+               |--16.75%--processor_thread_func
+               |          |          
+               |          |--11.17%--log_message
+               |          |          _IO_new_fopen (inlined)
+               |          |          __fopen_internal (inlined)
+               |          |          |          
+               |          |          |--8.38%--_IO_new_file_fopen (inlined)
+               |          |          |          _IO_file_open
+               |          |          |          __libc_open64 (inlined)
+               |          |          |          entry_SYSCALL_64_after_hwframe
+               |          |          |          do_syscall_64
+               |          |          |          x64_sys_call
+               |          |          |          __x64_sys_openat
+               |          |          |          do_sys_openat2
+               |          |          |          |          
+               |          |          |          |--5.58%--do_file_open
+               |          |          |          |          path_openat
+               |          |          |          |          |          
+               |          |          |          |          |--2.79%--path_init
+               |          |          |          |          |          nd_jump_root
+               |          |          |          |          |          set_root
+               |          |          |          |          |          
+               |          |          |          |           --2.79%--alloc_empty_file
+               |          |          |          |                     init_file
+               |          |          |          |                     security_file_alloc
+               |          |          |          |                     kmem_cache_alloc_noprof
+               |          |          |          |          
+               |          |          |           --2.79%--getname_flags
+               |          |          |                     do_getname
+               |          |          |                     kmem_cache_alloc_noprof
+               |          |          |          
+               |          |           --2.79%--__libc_malloc (inlined)
+               |          |                     tcache_init (inlined)
+               |          |                     arena_get2 (inlined)
+               |          |                     _int_new_arena (inlined)
+               |          |                     new_heap (inlined)
+               |          |                     __mprotect
+               |          |                     asm_exc_page_fault
+               |          |          
+               |          |--2.79%--cb_pop
+               |          |          __futex_abstimed_wait_cancelable64 (inlined)
+               |          |          
+               |           --2.79%--__snprintf (inlined)
+               |                     __vsnprintf_internal
+               |                     __printf_buffer_snprintf_done (inlined)
+               |                     __printf_buffer
+               |                     __printf_buffer_write
+               |          
+               |--8.38%--sensor_thread_func
+               |          __clock_nanosleep (inlined)
+               |          entry_SYSCALL_64_after_hwframe
+               |          do_syscall_64
+               |          |          
+               |          |--2.79%--__x64_sys_clock_nanosleep
+               |          |          
+               |          |--2.79%--exit_to_user_mode_loop
+               |          |          
+               |           --2.79%--x64_sys_call
+               |                     __x64_sys_clock_nanosleep
+               |                     common_nsleep_timens
+               |                     hrtimer_nanosleep
+               |                     do_nanosleep
+               |                     schedule
+               |                     __schedule
+               |                     try_to_block_task.constprop.0.isra.0
+               |                     dequeue_task
+               |                     dequeue_task_rt
+               |          
+               |--5.58%--alert_thread_func
+               |          |          
+               |          |--2.79%--__mq_open (inlined)
+               |          |          entry_SYSCALL_64_after_hwframe
+               |          |          do_syscall_64
+               |          |          x64_sys_call
+               |          |          __x64_sys_mq_open
+               |          |          do_mq_open
+               |          |          mqueue_file_open
+               |          |          dentry_open
+               |          |          alloc_empty_file
+               |          |          init_file
+               |          |          
+               |           --2.79%--___mq_timedreceive_time64 (inlined)
+               |                     ___mq_timedreceive_time64 (inlined)
+               |                     entry_SYSCALL_64_after_hwframe
+               |                     do_syscall_64
+               |                     __x64_sys_mq_timedreceive
+               |          
+               |--2.79%--__res_thread_freeres
+               |          asm_exc_page_fault
+               |          exc_page_fault
+               |          do_user_addr_fault
+               |          handle_mm_fault
+               |          __handle_mm_fault
+               |          handle_pte_fault
+               |          do_fault
+               |          do_read_fault
+               |          filemap_map_pages
+               |          
+               |--2.79%--__stat64 (inlined)
+               |          
+                --2.79%--__mq_unlink (inlined)
+                          entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          __x64_sys_mq_unlink
+
+    34.57%     0.00%  sms_app_x86  sms_app_x86           [.] _start
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               main
+               __pthread_create_2_1 (inlined)
+               internal_signal_restore_set (inlined)
+               create_thread
+               __clone3 (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_clone3
+               __do_sys_clone3
+               kernel_clone
+               |          
+               |--22.92%--copy_process
+               |          perf_event_init_task
+               |          perf_event_init_context.constprop.0
+               |          inherit_task_group.isra.0
+               |          inherit_event.isra.0
+               |          perf_event_alloc
+               |          perf_init_event
+               |          perf_try_init_event
+               |          x86_pmu_event_init
+               |          |          
+               |          |--12.63%--allocate_fake_cpuc
+               |          |          __pi_memset
+               |          |          
+               |           --10.29%--adl_hw_config
+               |          
+                --11.65%--wake_up_new_task
+                          select_task_rq_fair
+                          sched_balance_find_dst_group
+                          update_sg_wakeup_stats
+
+    34.57%     0.00%  sms_app_x86  libc.so.6             [.] __libc_start_main_impl (inlined)
+            |
+            ---__libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               main
+               __pthread_create_2_1 (inlined)
+               internal_signal_restore_set (inlined)
+               create_thread
+               __clone3 (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_clone3
+               __do_sys_clone3
+               kernel_clone
+               |          
+               |--22.92%--copy_process
+               |          perf_event_init_task
+               |          perf_event_init_context.constprop.0
+               |          inherit_task_group.isra.0
+               |          inherit_event.isra.0
+               |          perf_event_alloc
+               |          perf_init_event
+               |          perf_try_init_event
+               |          x86_pmu_event_init
+               |          |          
+               |          |--12.63%--allocate_fake_cpuc
+               |          |          __pi_memset
+               |          |          
+               |           --10.29%--adl_hw_config
+               |          
+                --11.65%--wake_up_new_task
+                          select_task_rq_fair
+                          sched_balance_find_dst_group
+                          update_sg_wakeup_stats
+
+    34.57%     0.00%  sms_app_x86  libc.so.6             [.] call_init (inlined)
+            |
+            ---call_init (inlined)
+               __libc_start_call_main
+               main
+               __pthread_create_2_1 (inlined)
+               internal_signal_restore_set (inlined)
+               create_thread
+               __clone3 (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_clone3
+               __do_sys_clone3
+               kernel_clone
+               |          
+               |--22.92%--copy_process
+               |          perf_event_init_task
+               |          perf_event_init_context.constprop.0
+               |          inherit_task_group.isra.0
+               |          inherit_event.isra.0
+               |          perf_event_alloc
+               |          perf_init_event
+               |          perf_try_init_event
+               |          x86_pmu_event_init
+               |          |          
+               |          |--12.63%--allocate_fake_cpuc
+               |          |          __pi_memset
+               |          |          
+               |           --10.29%--adl_hw_config
+               |          
+                --11.65%--wake_up_new_task
+                          select_task_rq_fair
+                          sched_balance_find_dst_group
+                          update_sg_wakeup_stats
+
+    34.57%     0.00%  sms_app_x86  libc.so.6             [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               main
+               __pthread_create_2_1 (inlined)
+               internal_signal_restore_set (inlined)
+               create_thread
+               __clone3 (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_clone3
+               __do_sys_clone3
+               kernel_clone
+               |          
+               |--22.92%--copy_process
+               |          perf_event_init_task
+               |          perf_event_init_context.constprop.0
+               |          inherit_task_group.isra.0
+               |          inherit_event.isra.0
+               |          perf_event_alloc
+               |          perf_init_event
+               |          perf_try_init_event
+               |          x86_pmu_event_init
+               |          |          
+               |          |--12.63%--allocate_fake_cpuc
+               |          |          __pi_memset
+               |          |          
+               |           --10.29%--adl_hw_config
+               |          
+                --11.65%--wake_up_new_task
+                          select_task_rq_fair
+                          sched_balance_find_dst_group
+                          update_sg_wakeup_stats
+
+    34.57%     0.00%  sms_app_x86  sms_app_x86           [.] main
+            |
+            ---main
+               __pthread_create_2_1 (inlined)
+               internal_signal_restore_set (inlined)
+               create_thread
+               __clone3 (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_clone3
+               __do_sys_clone3
+               kernel_clone
+               |          
+               |--22.92%--copy_process
+               |          perf_event_init_task
+               |          perf_event_init_context.constprop.0
+               |          inherit_task_group.isra.0
+               |          inherit_event.isra.0
+               |          perf_event_alloc
+               |          perf_init_event
+               |          perf_try_init_event
+               |          x86_pmu_event_init
+               |          |          
+               |          |--12.63%--allocate_fake_cpuc
+               |          |          __pi_memset
+               |          |          
+               |           --10.29%--adl_hw_config
+               |          
+                --11.65%--wake_up_new_task
+                          select_task_rq_fair
+                          sched_balance_find_dst_group
+                          update_sg_wakeup_stats
+
+    34.57%     0.00%  sms_app_x86  libc.so.6             [.] __pthread_create_2_1 (inlined)
+            |
+            ---__pthread_create_2_1 (inlined)
+               internal_signal_restore_set (inlined)
+               create_thread
+               __clone3 (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_clone3
+               __do_sys_clone3
+               kernel_clone
+               |          
+               |--22.92%--copy_process
+               |          perf_event_init_task
+               |          perf_event_init_context.constprop.0
+               |          inherit_task_group.isra.0
+               |          inherit_event.isra.0
+               |          perf_event_alloc
+               |          perf_init_event
+               |          perf_try_init_event
+               |          x86_pmu_event_init
+               |          |          
+               |          |--12.63%--allocate_fake_cpuc
+               |          |          __pi_memset
+               |          |          
+               |           --10.29%--adl_hw_config
+               |          
+                --11.65%--wake_up_new_task
+                          select_task_rq_fair
+                          sched_balance_find_dst_group
+                          update_sg_wakeup_stats
+
+    34.57%     0.00%  sms_app_x86  libc.so.6             [.] internal_signal_restore_set (inlined)
+            |
+            ---internal_signal_restore_set (inlined)
+               create_thread
+               __clone3 (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_clone3
+               __do_sys_clone3
+               kernel_clone
+               |          
+               |--22.92%--copy_process
+               |          perf_event_init_task
+               |          perf_event_init_context.constprop.0
+               |          inherit_task_group.isra.0
+               |          inherit_event.isra.0
+               |          perf_event_alloc
+               |          perf_init_event
+               |          perf_try_init_event
+               |          x86_pmu_event_init
+               |          |          
+               |          |--12.63%--allocate_fake_cpuc
+               |          |          __pi_memset
+               |          |          
+               |           --10.29%--adl_hw_config
+               |          
+                --11.65%--wake_up_new_task
+                          select_task_rq_fair
+                          sched_balance_find_dst_group
+                          update_sg_wakeup_stats
+
+    34.57%     0.00%  sms_app_x86  libc.so.6             [.] create_thread
+            |
+            ---create_thread
+               __clone3 (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_clone3
+               __do_sys_clone3
+               kernel_clone
+               |          
+               |--22.92%--copy_process
+               |          perf_event_init_task
+               |          perf_event_init_context.constprop.0
+               |          inherit_task_group.isra.0
+               |          inherit_event.isra.0
+               |          perf_event_alloc
+               |          perf_init_event
+               |          perf_try_init_event
+               |          x86_pmu_event_init
+               |          |          
+               |          |--12.63%--allocate_fake_cpuc
+               |          |          __pi_memset
+               |          |          
+               |           --10.29%--adl_hw_config
+               |          
+                --11.65%--wake_up_new_task
+                          select_task_rq_fair
+                          sched_balance_find_dst_group
+                          update_sg_wakeup_stats
+
+    34.57%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] __x64_sys_clone3
+            |
+            ---__x64_sys_clone3
+               __do_sys_clone3
+               kernel_clone
+               |          
+               |--22.92%--copy_process
+               |          perf_event_init_task
+               |          perf_event_init_context.constprop.0
+               |          inherit_task_group.isra.0
+               |          inherit_event.isra.0
+               |          perf_event_alloc
+               |          perf_init_event
+               |          perf_try_init_event
+               |          x86_pmu_event_init
+               |          |          
+               |          |--12.63%--allocate_fake_cpuc
+               |          |          __pi_memset
+               |          |          
+               |           --10.29%--adl_hw_config
+               |          
+                --11.65%--wake_up_new_task
+                          select_task_rq_fair
+                          sched_balance_find_dst_group
+                          update_sg_wakeup_stats
+
+    34.57%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] __do_sys_clone3
+            |
+            ---__do_sys_clone3
+               kernel_clone
+               |          
+               |--22.92%--copy_process
+               |          perf_event_init_task
+               |          perf_event_init_context.constprop.0
+               |          inherit_task_group.isra.0
+               |          inherit_event.isra.0
+               |          perf_event_alloc
+               |          perf_init_event
+               |          perf_try_init_event
+               |          x86_pmu_event_init
+               |          |          
+               |          |--12.63%--allocate_fake_cpuc
+               |          |          __pi_memset
+               |          |          
+               |           --10.29%--adl_hw_config
+               |          
+                --11.65%--wake_up_new_task
+                          select_task_rq_fair
+                          sched_balance_find_dst_group
+                          update_sg_wakeup_stats
+
+    34.57%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] kernel_clone
+            |
+            ---kernel_clone
+               |          
+               |--22.92%--copy_process
+               |          perf_event_init_task
+               |          perf_event_init_context.constprop.0
+               |          inherit_task_group.isra.0
+               |          inherit_event.isra.0
+               |          perf_event_alloc
+               |          perf_init_event
+               |          perf_try_init_event
+               |          x86_pmu_event_init
+               |          |          
+               |          |--12.63%--allocate_fake_cpuc
+               |          |          __pi_memset
+               |          |          
+               |           --10.29%--adl_hw_config
+               |          
+                --11.65%--wake_up_new_task
+                          select_task_rq_fair
+                          sched_balance_find_dst_group
+                          update_sg_wakeup_stats
+
+    22.92%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] copy_process
+            |
+            ---copy_process
+               perf_event_init_task
+               perf_event_init_context.constprop.0
+               inherit_task_group.isra.0
+               inherit_event.isra.0
+               perf_event_alloc
+               perf_init_event
+               perf_try_init_event
+               x86_pmu_event_init
+               |          
+               |--12.63%--allocate_fake_cpuc
+               |          __pi_memset
+               |          
+                --10.29%--adl_hw_config
+
+    22.92%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] perf_event_init_task
+            |
+            ---perf_event_init_task
+               perf_event_init_context.constprop.0
+               inherit_task_group.isra.0
+               inherit_event.isra.0
+               perf_event_alloc
+               perf_init_event
+               perf_try_init_event
+               x86_pmu_event_init
+               |          
+               |--12.63%--allocate_fake_cpuc
+               |          __pi_memset
+               |          
+                --10.29%--adl_hw_config
+
+    22.92%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] perf_event_init_context.constprop.0
+            |
+            ---perf_event_init_context.constprop.0
+               inherit_task_group.isra.0
+               inherit_event.isra.0
+               perf_event_alloc
+               perf_init_event
+               perf_try_init_event
+               x86_pmu_event_init
+               |          
+               |--12.63%--allocate_fake_cpuc
+               |          __pi_memset
+               |          
+                --10.29%--adl_hw_config
+
+    22.92%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] inherit_task_group.isra.0
+            |
+            ---inherit_task_group.isra.0
+               inherit_event.isra.0
+               perf_event_alloc
+               perf_init_event
+               perf_try_init_event
+               x86_pmu_event_init
+               |          
+               |--12.63%--allocate_fake_cpuc
+               |          __pi_memset
+               |          
+                --10.29%--adl_hw_config
+
+    22.92%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] inherit_event.isra.0
+            |
+            ---inherit_event.isra.0
+               perf_event_alloc
+               perf_init_event
+               perf_try_init_event
+               x86_pmu_event_init
+               |          
+               |--12.63%--allocate_fake_cpuc
+               |          __pi_memset
+               |          
+                --10.29%--adl_hw_config
+
+    22.92%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] perf_event_alloc
+            |
+            ---perf_event_alloc
+               perf_init_event
+               perf_try_init_event
+               x86_pmu_event_init
+               |          
+               |--12.63%--allocate_fake_cpuc
+               |          __pi_memset
+               |          
+                --10.29%--adl_hw_config
+
+    22.92%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] perf_init_event
+            |
+            ---perf_init_event
+               perf_try_init_event
+               x86_pmu_event_init
+               |          
+               |--12.63%--allocate_fake_cpuc
+               |          __pi_memset
+               |          
+                --10.29%--adl_hw_config
+
+    22.92%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] perf_try_init_event
+            |
+            ---perf_try_init_event
+               x86_pmu_event_init
+               |          
+               |--12.63%--allocate_fake_cpuc
+               |          __pi_memset
+               |          
+                --10.29%--adl_hw_config
+
+    22.92%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] x86_pmu_event_init
+            |
+            ---x86_pmu_event_init
+               |          
+               |--12.63%--allocate_fake_cpuc
+               |          __pi_memset
+               |          
+                --10.29%--adl_hw_config
+
+    20.75%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] _dl_start_user
+            |
+            ---_dl_start_user
+               _dl_start
+               _dl_start_final (inlined)
+               _dl_sysdep_start
+               |          
+               |--15.75%--dl_main
+               |          |          
+               |          |--8.75%--__mprotect (inlined)
+               |          |          entry_SYSCALL_64_after_hwframe
+               |          |          do_syscall_64
+               |          |          x64_sys_call
+               |          |          __x64_sys_mprotect
+               |          |          do_mprotect_pkey
+               |          |          mprotect_fixup
+               |          |          perf_event_mmap
+               |          |          perf_event_mmap_event
+               |          |          perf_iterate_sb.constprop.0
+               |          |          perf_event_mmap_output
+               |          |          
+               |           --7.00%--rtld_timer_accum (inlined)
+               |                     rtld_timer_stop (inlined)
+               |                     _dl_map_object_deps
+               |                     _dl_catch_exception
+               |                     set_catch (inlined)
+               |                     openaux
+               |                     _dl_map_object
+               |                     memset
+               |                     asm_exc_page_fault
+               |                     exc_page_fault
+               |                     do_user_addr_fault
+               |                     handle_mm_fault
+               |                     __handle_mm_fault
+               |                     handle_pte_fault
+               |                     do_fault
+               |                     folio_prealloc
+               |                     vma_alloc_folio_noprof
+               |                     alloc_pages_mpol
+               |                     __alloc_frozen_pages_noprof
+               |                     get_page_from_freelist
+               |                     post_alloc_hook
+               |                     kernel_init_pages
+               |          
+                --5.00%--init_cpu_features (inlined)
+                          dl_init_cacheinfo (inlined)
+                          handle_intel (inlined)
+                          intel_check_word (inlined)
+
+    20.75%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] _dl_start
+            |
+            ---_dl_start
+               _dl_start_final (inlined)
+               _dl_sysdep_start
+               |          
+               |--15.75%--dl_main
+               |          |          
+               |          |--8.75%--__mprotect (inlined)
+               |          |          entry_SYSCALL_64_after_hwframe
+               |          |          do_syscall_64
+               |          |          x64_sys_call
+               |          |          __x64_sys_mprotect
+               |          |          do_mprotect_pkey
+               |          |          mprotect_fixup
+               |          |          perf_event_mmap
+               |          |          perf_event_mmap_event
+               |          |          perf_iterate_sb.constprop.0
+               |          |          perf_event_mmap_output
+               |          |          
+               |           --7.00%--rtld_timer_accum (inlined)
+               |                     rtld_timer_stop (inlined)
+               |                     _dl_map_object_deps
+               |                     _dl_catch_exception
+               |                     set_catch (inlined)
+               |                     openaux
+               |                     _dl_map_object
+               |                     memset
+               |                     asm_exc_page_fault
+               |                     exc_page_fault
+               |                     do_user_addr_fault
+               |                     handle_mm_fault
+               |                     __handle_mm_fault
+               |                     handle_pte_fault
+               |                     do_fault
+               |                     folio_prealloc
+               |                     vma_alloc_folio_noprof
+               |                     alloc_pages_mpol
+               |                     __alloc_frozen_pages_noprof
+               |                     get_page_from_freelist
+               |                     post_alloc_hook
+               |                     kernel_init_pages
+               |          
+                --5.00%--init_cpu_features (inlined)
+                          dl_init_cacheinfo (inlined)
+                          handle_intel (inlined)
+                          intel_check_word (inlined)
+
+    20.75%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] _dl_start_final (inlined)
+            |
+            ---_dl_start_final (inlined)
+               _dl_sysdep_start
+               |          
+               |--15.75%--dl_main
+               |          |          
+               |          |--8.75%--__mprotect (inlined)
+               |          |          entry_SYSCALL_64_after_hwframe
+               |          |          do_syscall_64
+               |          |          x64_sys_call
+               |          |          __x64_sys_mprotect
+               |          |          do_mprotect_pkey
+               |          |          mprotect_fixup
+               |          |          perf_event_mmap
+               |          |          perf_event_mmap_event
+               |          |          perf_iterate_sb.constprop.0
+               |          |          perf_event_mmap_output
+               |          |          
+               |           --7.00%--rtld_timer_accum (inlined)
+               |                     rtld_timer_stop (inlined)
+               |                     _dl_map_object_deps
+               |                     _dl_catch_exception
+               |                     set_catch (inlined)
+               |                     openaux
+               |                     _dl_map_object
+               |                     memset
+               |                     asm_exc_page_fault
+               |                     exc_page_fault
+               |                     do_user_addr_fault
+               |                     handle_mm_fault
+               |                     __handle_mm_fault
+               |                     handle_pte_fault
+               |                     do_fault
+               |                     folio_prealloc
+               |                     vma_alloc_folio_noprof
+               |                     alloc_pages_mpol
+               |                     __alloc_frozen_pages_noprof
+               |                     get_page_from_freelist
+               |                     post_alloc_hook
+               |                     kernel_init_pages
+               |          
+                --5.00%--init_cpu_features (inlined)
+                          dl_init_cacheinfo (inlined)
+                          handle_intel (inlined)
+                          intel_check_word (inlined)
+
+    20.75%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] _dl_sysdep_start
+            |
+            ---_dl_sysdep_start
+               |          
+               |--15.75%--dl_main
+               |          |          
+               |          |--8.75%--__mprotect (inlined)
+               |          |          entry_SYSCALL_64_after_hwframe
+               |          |          do_syscall_64
+               |          |          x64_sys_call
+               |          |          __x64_sys_mprotect
+               |          |          do_mprotect_pkey
+               |          |          mprotect_fixup
+               |          |          perf_event_mmap
+               |          |          perf_event_mmap_event
+               |          |          perf_iterate_sb.constprop.0
+               |          |          perf_event_mmap_output
+               |          |          
+               |           --7.00%--rtld_timer_accum (inlined)
+               |                     rtld_timer_stop (inlined)
+               |                     _dl_map_object_deps
+               |                     _dl_catch_exception
+               |                     set_catch (inlined)
+               |                     openaux
+               |                     _dl_map_object
+               |                     memset
+               |                     asm_exc_page_fault
+               |                     exc_page_fault
+               |                     do_user_addr_fault
+               |                     handle_mm_fault
+               |                     __handle_mm_fault
+               |                     handle_pte_fault
+               |                     do_fault
+               |                     folio_prealloc
+               |                     vma_alloc_folio_noprof
+               |                     alloc_pages_mpol
+               |                     __alloc_frozen_pages_noprof
+               |                     get_page_from_freelist
+               |                     post_alloc_hook
+               |                     kernel_init_pages
+               |          
+                --5.00%--init_cpu_features (inlined)
+                          dl_init_cacheinfo (inlined)
+                          handle_intel (inlined)
+                          intel_check_word (inlined)
+
+    16.75%     0.00%  sms_app_x86  sms_app_x86           [.] processor_thread_func
+            |
+            ---processor_thread_func
+               |          
+               |--11.17%--log_message
+               |          _IO_new_fopen (inlined)
+               |          __fopen_internal (inlined)
+               |          |          
+               |          |--8.38%--_IO_new_file_fopen (inlined)
+               |          |          _IO_file_open
+               |          |          __libc_open64 (inlined)
+               |          |          entry_SYSCALL_64_after_hwframe
+               |          |          do_syscall_64
+               |          |          x64_sys_call
+               |          |          __x64_sys_openat
+               |          |          do_sys_openat2
+               |          |          |          
+               |          |          |--5.58%--do_file_open
+               |          |          |          path_openat
+               |          |          |          |          
+               |          |          |          |--2.79%--path_init
+               |          |          |          |          nd_jump_root
+               |          |          |          |          set_root
+               |          |          |          |          
+               |          |          |           --2.79%--alloc_empty_file
+               |          |          |                     init_file
+               |          |          |                     security_file_alloc
+               |          |          |                     kmem_cache_alloc_noprof
+               |          |          |          
+               |          |           --2.79%--getname_flags
+               |          |                     do_getname
+               |          |                     kmem_cache_alloc_noprof
+               |          |          
+               |           --2.79%--__libc_malloc (inlined)
+               |                     tcache_init (inlined)
+               |                     arena_get2 (inlined)
+               |                     _int_new_arena (inlined)
+               |                     new_heap (inlined)
+               |                     __mprotect
+               |                     asm_exc_page_fault
+               |          
+               |--2.79%--cb_pop
+               |          __futex_abstimed_wait_cancelable64 (inlined)
+               |          
+                --2.79%--__snprintf (inlined)
+                          __vsnprintf_internal
+                          __printf_buffer_snprintf_done (inlined)
+                          __printf_buffer
+                          __printf_buffer_write
+
+    15.75%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] dl_main
+            |
+            ---dl_main
+               |          
+               |--8.75%--__mprotect (inlined)
+               |          entry_SYSCALL_64_after_hwframe
+               |          do_syscall_64
+               |          x64_sys_call
+               |          __x64_sys_mprotect
+               |          do_mprotect_pkey
+               |          mprotect_fixup
+               |          perf_event_mmap
+               |          perf_event_mmap_event
+               |          perf_iterate_sb.constprop.0
+               |          perf_event_mmap_output
+               |          
+                --7.00%--rtld_timer_accum (inlined)
+                          rtld_timer_stop (inlined)
+                          _dl_map_object_deps
+                          _dl_catch_exception
+                          set_catch (inlined)
+                          openaux
+                          _dl_map_object
+                          memset
+                          asm_exc_page_fault
+                          exc_page_fault
+                          do_user_addr_fault
+                          handle_mm_fault
+                          __handle_mm_fault
+                          handle_pte_fault
+                          do_fault
+                          folio_prealloc
+                          vma_alloc_folio_noprof
+                          alloc_pages_mpol
+                          __alloc_frozen_pages_noprof
+                          get_page_from_freelist
+                          post_alloc_hook
+                          kernel_init_pages
+
+    12.63%    12.63%  sms_app_x86  [kernel.kallsyms]     [k] __pi_memset
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               main
+               __pthread_create_2_1 (inlined)
+               internal_signal_restore_set (inlined)
+               create_thread
+               __clone3 (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_clone3
+               __do_sys_clone3
+               kernel_clone
+               copy_process
+               perf_event_init_task
+               perf_event_init_context.constprop.0
+               inherit_task_group.isra.0
+               inherit_event.isra.0
+               perf_event_alloc
+               perf_init_event
+               perf_try_init_event
+               x86_pmu_event_init
+               allocate_fake_cpuc
+               __pi_memset
+
+    12.63%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] allocate_fake_cpuc
+            |
+            ---allocate_fake_cpuc
+               __pi_memset
+
+    12.59%     2.79%  sms_app_x86  [kernel.kallsyms]     [.] asm_exc_page_fault
+            |          
+            |--9.79%--asm_exc_page_fault
+            |          exc_page_fault
+            |          do_user_addr_fault
+            |          handle_mm_fault
+            |          __handle_mm_fault
+            |          handle_pte_fault
+            |          do_fault
+            |          |          
+            |          |--7.00%--folio_prealloc
+            |          |          vma_alloc_folio_noprof
+            |          |          alloc_pages_mpol
+            |          |          __alloc_frozen_pages_noprof
+            |          |          get_page_from_freelist
+            |          |          post_alloc_hook
+            |          |          kernel_init_pages
+            |          |          
+            |           --2.79%--do_read_fault
+            |                     filemap_map_pages
+            |          
+             --2.79%--__clone3 (inlined)
+                       start_thread
+                       processor_thread_func
+                       log_message
+                       _IO_new_fopen (inlined)
+                       __fopen_internal (inlined)
+                       __libc_malloc (inlined)
+                       tcache_init (inlined)
+                       arena_get2 (inlined)
+                       _int_new_arena (inlined)
+                       new_heap (inlined)
+                       __mprotect
+                       asm_exc_page_fault
+
+    11.65%    11.65%  sms_app_x86  [kernel.kallsyms]     [k] update_sg_wakeup_stats
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               main
+               __pthread_create_2_1 (inlined)
+               internal_signal_restore_set (inlined)
+               create_thread
+               __clone3 (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_clone3
+               __do_sys_clone3
+               kernel_clone
+               wake_up_new_task
+               select_task_rq_fair
+               sched_balance_find_dst_group
+               update_sg_wakeup_stats
+
+    11.65%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] wake_up_new_task
+            |
+            ---wake_up_new_task
+               select_task_rq_fair
+               sched_balance_find_dst_group
+               update_sg_wakeup_stats
+
+    11.65%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] select_task_rq_fair
+            |
+            ---select_task_rq_fair
+               sched_balance_find_dst_group
+               update_sg_wakeup_stats
+
+    11.65%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] sched_balance_find_dst_group
+            |
+            ---sched_balance_find_dst_group
+               update_sg_wakeup_stats
+
+    11.54%     8.75%  sms_app_x86  [kernel.kallsyms]     [.] perf_event_mmap_output
+            |          
+            |--8.75%--_dl_start_user
+            |          _dl_start
+            |          _dl_start_final (inlined)
+            |          _dl_sysdep_start
+            |          dl_main
+            |          __mprotect (inlined)
+            |          entry_SYSCALL_64_after_hwframe
+            |          do_syscall_64
+            |          x64_sys_call
+            |          __x64_sys_mprotect
+            |          do_mprotect_pkey
+            |          mprotect_fixup
+            |          perf_event_mmap
+            |          perf_event_mmap_event
+            |          perf_iterate_sb.constprop.0
+            |          perf_event_mmap_output
+            |          
+             --2.79%--perf_event_mmap_output
+                       __perf_event_header__init_id
+                       __task_pid_nr_ns
+
+    11.54%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] perf_event_mmap
+            |
+            ---perf_event_mmap
+               perf_event_mmap_event
+               perf_iterate_sb.constprop.0
+               |          
+               |--8.75%--perf_event_mmap_output
+               |          
+                --2.79%--perf_iterate_ctx
+                          perf_event_mmap_output
+                          __perf_event_header__init_id
+                          __task_pid_nr_ns
+
+    11.54%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] perf_event_mmap_event
+            |
+            ---perf_event_mmap_event
+               perf_iterate_sb.constprop.0
+               |          
+               |--8.75%--perf_event_mmap_output
+               |          
+                --2.79%--perf_iterate_ctx
+                          perf_event_mmap_output
+                          __perf_event_header__init_id
+                          __task_pid_nr_ns
+
+    11.54%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] perf_iterate_sb.constprop.0
+            |
+            ---perf_iterate_sb.constprop.0
+               |          
+               |--8.75%--perf_event_mmap_output
+               |          
+                --2.79%--perf_iterate_ctx
+                          perf_event_mmap_output
+                          __perf_event_header__init_id
+                          __task_pid_nr_ns
+
+    11.17%     0.00%  sms_app_x86  sms_app_x86           [.] log_message
+            |
+            ---log_message
+               _IO_new_fopen (inlined)
+               __fopen_internal (inlined)
+               |          
+               |--8.38%--_IO_new_file_fopen (inlined)
+               |          _IO_file_open
+               |          __libc_open64 (inlined)
+               |          entry_SYSCALL_64_after_hwframe
+               |          do_syscall_64
+               |          x64_sys_call
+               |          __x64_sys_openat
+               |          do_sys_openat2
+               |          |          
+               |          |--5.58%--do_file_open
+               |          |          path_openat
+               |          |          |          
+               |          |          |--2.79%--path_init
+               |          |          |          nd_jump_root
+               |          |          |          set_root
+               |          |          |          
+               |          |           --2.79%--alloc_empty_file
+               |          |                     init_file
+               |          |                     security_file_alloc
+               |          |                     kmem_cache_alloc_noprof
+               |          |          
+               |           --2.79%--getname_flags
+               |                     do_getname
+               |                     kmem_cache_alloc_noprof
+               |          
+                --2.79%--__libc_malloc (inlined)
+                          tcache_init (inlined)
+                          arena_get2 (inlined)
+                          _int_new_arena (inlined)
+                          new_heap (inlined)
+                          __mprotect
+                          asm_exc_page_fault
+
+    11.17%     0.00%  sms_app_x86  libc.so.6             [.] _IO_new_fopen (inlined)
+            |
+            ---_IO_new_fopen (inlined)
+               __fopen_internal (inlined)
+               |          
+               |--8.38%--_IO_new_file_fopen (inlined)
+               |          _IO_file_open
+               |          __libc_open64 (inlined)
+               |          entry_SYSCALL_64_after_hwframe
+               |          do_syscall_64
+               |          x64_sys_call
+               |          __x64_sys_openat
+               |          do_sys_openat2
+               |          |          
+               |          |--5.58%--do_file_open
+               |          |          path_openat
+               |          |          |          
+               |          |          |--2.79%--path_init
+               |          |          |          nd_jump_root
+               |          |          |          set_root
+               |          |          |          
+               |          |           --2.79%--alloc_empty_file
+               |          |                     init_file
+               |          |                     security_file_alloc
+               |          |                     kmem_cache_alloc_noprof
+               |          |          
+               |           --2.79%--getname_flags
+               |                     do_getname
+               |                     kmem_cache_alloc_noprof
+               |          
+                --2.79%--__libc_malloc (inlined)
+                          tcache_init (inlined)
+                          arena_get2 (inlined)
+                          _int_new_arena (inlined)
+                          new_heap (inlined)
+                          __mprotect
+                          asm_exc_page_fault
+
+    11.17%     0.00%  sms_app_x86  libc.so.6             [.] __fopen_internal (inlined)
+            |
+            ---__fopen_internal (inlined)
+               |          
+               |--8.38%--_IO_new_file_fopen (inlined)
+               |          _IO_file_open
+               |          __libc_open64 (inlined)
+               |          entry_SYSCALL_64_after_hwframe
+               |          do_syscall_64
+               |          x64_sys_call
+               |          __x64_sys_openat
+               |          do_sys_openat2
+               |          |          
+               |          |--5.58%--do_file_open
+               |          |          path_openat
+               |          |          |          
+               |          |          |--2.79%--path_init
+               |          |          |          nd_jump_root
+               |          |          |          set_root
+               |          |          |          
+               |          |           --2.79%--alloc_empty_file
+               |          |                     init_file
+               |          |                     security_file_alloc
+               |          |                     kmem_cache_alloc_noprof
+               |          |          
+               |           --2.79%--getname_flags
+               |                     do_getname
+               |                     kmem_cache_alloc_noprof
+               |          
+                --2.79%--__libc_malloc (inlined)
+                          tcache_init (inlined)
+                          arena_get2 (inlined)
+                          _int_new_arena (inlined)
+                          new_heap (inlined)
+                          __mprotect
+                          asm_exc_page_fault
+
+    10.29%    10.29%  sms_app_x86  [kernel.kallsyms]     [k] adl_hw_config
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               main
+               __pthread_create_2_1 (inlined)
+               internal_signal_restore_set (inlined)
+               create_thread
+               __clone3 (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_clone3
+               __do_sys_clone3
+               kernel_clone
+               copy_process
+               perf_event_init_task
+               perf_event_init_context.constprop.0
+               inherit_task_group.isra.0
+               inherit_event.isra.0
+               perf_event_alloc
+               perf_init_event
+               perf_try_init_event
+               x86_pmu_event_init
+               adl_hw_config
+
+     9.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] exc_page_fault
+            |
+            ---exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_fault
+               |          
+               |--7.00%--folio_prealloc
+               |          vma_alloc_folio_noprof
+               |          alloc_pages_mpol
+               |          __alloc_frozen_pages_noprof
+               |          get_page_from_freelist
+               |          post_alloc_hook
+               |          kernel_init_pages
+               |          
+                --2.79%--do_read_fault
+                          filemap_map_pages
+
+     9.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] do_user_addr_fault
+            |
+            ---do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_fault
+               |          
+               |--7.00%--folio_prealloc
+               |          vma_alloc_folio_noprof
+               |          alloc_pages_mpol
+               |          __alloc_frozen_pages_noprof
+               |          get_page_from_freelist
+               |          post_alloc_hook
+               |          kernel_init_pages
+               |          
+                --2.79%--do_read_fault
+                          filemap_map_pages
+
+     9.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] handle_mm_fault
+            |
+            ---handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_fault
+               |          
+               |--7.00%--folio_prealloc
+               |          vma_alloc_folio_noprof
+               |          alloc_pages_mpol
+               |          __alloc_frozen_pages_noprof
+               |          get_page_from_freelist
+               |          post_alloc_hook
+               |          kernel_init_pages
+               |          
+                --2.79%--do_read_fault
+                          filemap_map_pages
+
+     9.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] __handle_mm_fault
+            |
+            ---__handle_mm_fault
+               handle_pte_fault
+               do_fault
+               |          
+               |--7.00%--folio_prealloc
+               |          vma_alloc_folio_noprof
+               |          alloc_pages_mpol
+               |          __alloc_frozen_pages_noprof
+               |          get_page_from_freelist
+               |          post_alloc_hook
+               |          kernel_init_pages
+               |          
+                --2.79%--do_read_fault
+                          filemap_map_pages
+
+     9.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] handle_pte_fault
+            |
+            ---handle_pte_fault
+               do_fault
+               |          
+               |--7.00%--folio_prealloc
+               |          vma_alloc_folio_noprof
+               |          alloc_pages_mpol
+               |          __alloc_frozen_pages_noprof
+               |          get_page_from_freelist
+               |          post_alloc_hook
+               |          kernel_init_pages
+               |          
+                --2.79%--do_read_fault
+                          filemap_map_pages
+
+     9.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] do_fault
+            |
+            ---do_fault
+               |          
+               |--7.00%--folio_prealloc
+               |          vma_alloc_folio_noprof
+               |          alloc_pages_mpol
+               |          __alloc_frozen_pages_noprof
+               |          get_page_from_freelist
+               |          post_alloc_hook
+               |          kernel_init_pages
+               |          
+                --2.79%--do_read_fault
+                          filemap_map_pages
+
+     8.75%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] __mprotect (inlined)
+            |
+            ---__mprotect (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_mprotect
+               do_mprotect_pkey
+               mprotect_fixup
+               perf_event_mmap
+               perf_event_mmap_event
+               perf_iterate_sb.constprop.0
+               perf_event_mmap_output
+
+     8.75%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] __x64_sys_mprotect
+            |
+            ---__x64_sys_mprotect
+               do_mprotect_pkey
+               mprotect_fixup
+               perf_event_mmap
+               perf_event_mmap_event
+               perf_iterate_sb.constprop.0
+               perf_event_mmap_output
+
+     8.75%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] do_mprotect_pkey
+            |
+            ---do_mprotect_pkey
+               mprotect_fixup
+               perf_event_mmap
+               perf_event_mmap_event
+               perf_iterate_sb.constprop.0
+               perf_event_mmap_output
+
+     8.75%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] mprotect_fixup
+            |
+            ---mprotect_fixup
+               perf_event_mmap
+               perf_event_mmap_event
+               perf_iterate_sb.constprop.0
+               perf_event_mmap_output
+
+     8.38%     0.00%  sms_app_x86  libc.so.6             [.] _IO_new_file_fopen (inlined)
+            |
+            ---_IO_new_file_fopen (inlined)
+               _IO_file_open
+               __libc_open64 (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               |          
+               |--5.58%--do_file_open
+               |          path_openat
+               |          |          
+               |          |--2.79%--path_init
+               |          |          nd_jump_root
+               |          |          set_root
+               |          |          
+               |           --2.79%--alloc_empty_file
+               |                     init_file
+               |                     security_file_alloc
+               |                     kmem_cache_alloc_noprof
+               |          
+                --2.79%--getname_flags
+                          do_getname
+                          kmem_cache_alloc_noprof
+
+     8.38%     0.00%  sms_app_x86  libc.so.6             [.] _IO_file_open
+            |
+            ---_IO_file_open
+               __libc_open64 (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               |          
+               |--5.58%--do_file_open
+               |          path_openat
+               |          |          
+               |          |--2.79%--path_init
+               |          |          nd_jump_root
+               |          |          set_root
+               |          |          
+               |           --2.79%--alloc_empty_file
+               |                     init_file
+               |                     security_file_alloc
+               |                     kmem_cache_alloc_noprof
+               |          
+                --2.79%--getname_flags
+                          do_getname
+                          kmem_cache_alloc_noprof
+
+     8.38%     0.00%  sms_app_x86  libc.so.6             [.] __libc_open64 (inlined)
+            |
+            ---__libc_open64 (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               |          
+               |--5.58%--do_file_open
+               |          path_openat
+               |          |          
+               |          |--2.79%--path_init
+               |          |          nd_jump_root
+               |          |          set_root
+               |          |          
+               |           --2.79%--alloc_empty_file
+               |                     init_file
+               |                     security_file_alloc
+               |                     kmem_cache_alloc_noprof
+               |          
+                --2.79%--getname_flags
+                          do_getname
+                          kmem_cache_alloc_noprof
+
+     8.38%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] __x64_sys_openat
+            |
+            ---__x64_sys_openat
+               do_sys_openat2
+               |          
+               |--5.58%--do_file_open
+               |          path_openat
+               |          |          
+               |          |--2.79%--path_init
+               |          |          nd_jump_root
+               |          |          set_root
+               |          |          
+               |           --2.79%--alloc_empty_file
+               |                     init_file
+               |                     security_file_alloc
+               |                     kmem_cache_alloc_noprof
+               |          
+                --2.79%--getname_flags
+                          do_getname
+                          kmem_cache_alloc_noprof
+
+     8.38%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] do_sys_openat2
+            |
+            ---do_sys_openat2
+               |          
+               |--5.58%--do_file_open
+               |          path_openat
+               |          |          
+               |          |--2.79%--path_init
+               |          |          nd_jump_root
+               |          |          set_root
+               |          |          
+               |           --2.79%--alloc_empty_file
+               |                     init_file
+               |                     security_file_alloc
+               |                     kmem_cache_alloc_noprof
+               |          
+                --2.79%--getname_flags
+                          do_getname
+                          kmem_cache_alloc_noprof
+
+     8.38%     0.00%  sms_app_x86  sms_app_x86           [.] sensor_thread_func
+            |
+            ---sensor_thread_func
+               __clock_nanosleep (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               |          
+               |--2.79%--__x64_sys_clock_nanosleep
+               |          
+               |--2.79%--exit_to_user_mode_loop
+               |          
+                --2.79%--x64_sys_call
+                          __x64_sys_clock_nanosleep
+                          common_nsleep_timens
+                          hrtimer_nanosleep
+                          do_nanosleep
+                          schedule
+                          __schedule
+                          try_to_block_task.constprop.0.isra.0
+                          dequeue_task
+                          dequeue_task_rt
+
+     8.38%     0.00%  sms_app_x86  libc.so.6             [.] __clock_nanosleep (inlined)
+            |
+            ---__clock_nanosleep (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               |          
+               |--2.79%--__x64_sys_clock_nanosleep
+               |          
+               |--2.79%--exit_to_user_mode_loop
+               |          
+                --2.79%--x64_sys_call
+                          __x64_sys_clock_nanosleep
+                          common_nsleep_timens
+                          hrtimer_nanosleep
+                          do_nanosleep
+                          schedule
+                          __schedule
+                          try_to_block_task.constprop.0.isra.0
+                          dequeue_task
+                          dequeue_task_rt
+
+     7.00%     7.00%  sms_app_x86  [kernel.kallsyms]     [k] kernel_init_pages
+            |
+            ---_dl_start_user
+               _dl_start
+               _dl_start_final (inlined)
+               _dl_sysdep_start
+               dl_main
+               rtld_timer_accum (inlined)
+               rtld_timer_stop (inlined)
+               _dl_map_object_deps
+               _dl_catch_exception
+               set_catch (inlined)
+               openaux
+               _dl_map_object
+               memset
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_fault
+               folio_prealloc
+               vma_alloc_folio_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+
+     7.00%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] rtld_timer_accum (inlined)
+            |
+            ---rtld_timer_accum (inlined)
+               rtld_timer_stop (inlined)
+               _dl_map_object_deps
+               _dl_catch_exception
+               set_catch (inlined)
+               openaux
+               _dl_map_object
+               memset
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_fault
+               folio_prealloc
+               vma_alloc_folio_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+
+     7.00%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] rtld_timer_stop (inlined)
+            |
+            ---rtld_timer_stop (inlined)
+               _dl_map_object_deps
+               _dl_catch_exception
+               set_catch (inlined)
+               openaux
+               _dl_map_object
+               memset
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_fault
+               folio_prealloc
+               vma_alloc_folio_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+
+     7.00%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] _dl_map_object_deps
+            |
+            ---_dl_map_object_deps
+               _dl_catch_exception
+               set_catch (inlined)
+               openaux
+               _dl_map_object
+               memset
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_fault
+               folio_prealloc
+               vma_alloc_folio_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+
+     7.00%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] _dl_catch_exception
+            |
+            ---_dl_catch_exception
+               set_catch (inlined)
+               openaux
+               _dl_map_object
+               memset
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_fault
+               folio_prealloc
+               vma_alloc_folio_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+
+     7.00%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] set_catch (inlined)
+            |
+            ---set_catch (inlined)
+               openaux
+               _dl_map_object
+               memset
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_fault
+               folio_prealloc
+               vma_alloc_folio_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+
+     7.00%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] openaux
+            |
+            ---openaux
+               _dl_map_object
+               memset
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_fault
+               folio_prealloc
+               vma_alloc_folio_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+
+     7.00%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] _dl_map_object
+            |
+            ---_dl_map_object
+               memset
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_fault
+               folio_prealloc
+               vma_alloc_folio_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+
+     7.00%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] memset
+            |
+            ---memset
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_fault
+               folio_prealloc
+               vma_alloc_folio_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+
+     7.00%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] folio_prealloc
+            |
+            ---folio_prealloc
+               vma_alloc_folio_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+
+     7.00%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] vma_alloc_folio_noprof
+            |
+            ---vma_alloc_folio_noprof
+               alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+
+     7.00%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] alloc_pages_mpol
+            |
+            ---alloc_pages_mpol
+               __alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+
+     7.00%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] __alloc_frozen_pages_noprof
+            |
+            ---__alloc_frozen_pages_noprof
+               get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+
+     7.00%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] get_page_from_freelist
+            |
+            ---get_page_from_freelist
+               post_alloc_hook
+               kernel_init_pages
+
+     7.00%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] post_alloc_hook
+            |
+            ---post_alloc_hook
+               kernel_init_pages
+
+     5.58%     5.58%  sms_app_x86  [kernel.kallsyms]     [k] kmem_cache_alloc_noprof
+            |
+            ---__clone3 (inlined)
+               start_thread
+               processor_thread_func
+               log_message
+               _IO_new_fopen (inlined)
+               __fopen_internal (inlined)
+               _IO_new_file_fopen (inlined)
+               _IO_file_open
+               __libc_open64 (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               |          
+               |--2.79%--do_file_open
+               |          path_openat
+               |          alloc_empty_file
+               |          init_file
+               |          security_file_alloc
+               |          kmem_cache_alloc_noprof
+               |          
+                --2.79%--getname_flags
+                          do_getname
+                          kmem_cache_alloc_noprof
+
+     5.58%     2.79%  sms_app_x86  [kernel.kallsyms]     [k] init_file
+            |          
+            |--2.79%--init_file
+            |          security_file_alloc
+            |          kmem_cache_alloc_noprof
+            |          
+             --2.79%--__clone3 (inlined)
+                       start_thread
+                       alert_thread_func
+                       __mq_open (inlined)
+                       entry_SYSCALL_64_after_hwframe
+                       do_syscall_64
+                       x64_sys_call
+                       __x64_sys_mq_open
+                       do_mq_open
+                       mqueue_file_open
+                       dentry_open
+                       alloc_empty_file
+                       init_file
+
+     5.58%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] __mmap_region
+            |
+            ---__mmap_region
+               |          
+               |--2.79%--__mmap_setup
+               |          mas_prev
+               |          mas_prev_slot
+               |          
+                --2.79%--perf_event_mmap
+                          perf_event_mmap_event
+                          perf_iterate_sb.constprop.0
+                          perf_iterate_ctx
+                          perf_event_mmap_output
+                          __perf_event_header__init_id
+                          __task_pid_nr_ns
+
+     5.58%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] __x64_sys_clock_nanosleep
+            |
+            ---__x64_sys_clock_nanosleep
+               |          
+                --2.79%--common_nsleep_timens
+                          hrtimer_nanosleep
+                          do_nanosleep
+                          schedule
+                          __schedule
+                          try_to_block_task.constprop.0.isra.0
+                          dequeue_task
+                          dequeue_task_rt
+
+     5.58%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] __x64_sys_execve
+            |
+            ---__x64_sys_execve
+               do_execveat_common.isra.0
+               bprm_execve
+               bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+               |          
+               |--2.79%--load_elf_interp.isra.0
+               |          elf_load
+               |          vm_mmap
+               |          vm_mmap_pgoff
+               |          do_mmap
+               |          mmap_region
+               |          __mmap_region
+               |          __mmap_setup
+               |          mas_prev
+               |          mas_prev_slot
+               |          
+                --2.79%--elf_load
+                          vm_mmap
+                          vm_mmap_pgoff
+                          do_mmap
+                          mmap_region
+                          __mmap_region
+                          perf_event_mmap
+                          perf_event_mmap_event
+                          perf_iterate_sb.constprop.0
+                          perf_iterate_ctx
+                          perf_event_mmap_output
+                          __perf_event_header__init_id
+                          __task_pid_nr_ns
+
+     5.58%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] alloc_empty_file
+            |
+            ---alloc_empty_file
+               init_file
+               |          
+                --2.79%--security_file_alloc
+                          kmem_cache_alloc_noprof
+
+     5.58%     0.00%  sms_app_x86  [unknown]             [k] 0x00007411050ef03b
+            |
+            ---0x7411050ef03b
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_execve
+               do_execveat_common.isra.0
+               bprm_execve
+               bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+               |          
+               |--2.79%--load_elf_interp.isra.0
+               |          elf_load
+               |          vm_mmap
+               |          vm_mmap_pgoff
+               |          do_mmap
+               |          mmap_region
+               |          __mmap_region
+               |          __mmap_setup
+               |          mas_prev
+               |          mas_prev_slot
+               |          
+                --2.79%--elf_load
+                          vm_mmap
+                          vm_mmap_pgoff
+                          do_mmap
+                          mmap_region
+                          __mmap_region
+                          perf_event_mmap
+                          perf_event_mmap_event
+                          perf_iterate_sb.constprop.0
+                          perf_iterate_ctx
+                          perf_event_mmap_output
+                          __perf_event_header__init_id
+                          __task_pid_nr_ns
+
+     5.58%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] do_execveat_common.isra.0
+            |
+            ---do_execveat_common.isra.0
+               bprm_execve
+               bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+               |          
+               |--2.79%--load_elf_interp.isra.0
+               |          elf_load
+               |          vm_mmap
+               |          vm_mmap_pgoff
+               |          do_mmap
+               |          mmap_region
+               |          __mmap_region
+               |          __mmap_setup
+               |          mas_prev
+               |          mas_prev_slot
+               |          
+                --2.79%--elf_load
+                          vm_mmap
+                          vm_mmap_pgoff
+                          do_mmap
+                          mmap_region
+                          __mmap_region
+                          perf_event_mmap
+                          perf_event_mmap_event
+                          perf_iterate_sb.constprop.0
+                          perf_iterate_ctx
+                          perf_event_mmap_output
+                          __perf_event_header__init_id
+                          __task_pid_nr_ns
+
+     5.58%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] bprm_execve
+            |
+            ---bprm_execve
+               bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+               |          
+               |--2.79%--load_elf_interp.isra.0
+               |          elf_load
+               |          vm_mmap
+               |          vm_mmap_pgoff
+               |          do_mmap
+               |          mmap_region
+               |          __mmap_region
+               |          __mmap_setup
+               |          mas_prev
+               |          mas_prev_slot
+               |          
+                --2.79%--elf_load
+                          vm_mmap
+                          vm_mmap_pgoff
+                          do_mmap
+                          mmap_region
+                          __mmap_region
+                          perf_event_mmap
+                          perf_event_mmap_event
+                          perf_iterate_sb.constprop.0
+                          perf_iterate_ctx
+                          perf_event_mmap_output
+                          __perf_event_header__init_id
+                          __task_pid_nr_ns
+
+     5.58%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] bprm_execve.part.0
+            |
+            ---bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+               |          
+               |--2.79%--load_elf_interp.isra.0
+               |          elf_load
+               |          vm_mmap
+               |          vm_mmap_pgoff
+               |          do_mmap
+               |          mmap_region
+               |          __mmap_region
+               |          __mmap_setup
+               |          mas_prev
+               |          mas_prev_slot
+               |          
+                --2.79%--elf_load
+                          vm_mmap
+                          vm_mmap_pgoff
+                          do_mmap
+                          mmap_region
+                          __mmap_region
+                          perf_event_mmap
+                          perf_event_mmap_event
+                          perf_iterate_sb.constprop.0
+                          perf_iterate_ctx
+                          perf_event_mmap_output
+                          __perf_event_header__init_id
+                          __task_pid_nr_ns
+
+     5.58%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] do_file_open
+            |
+            ---do_file_open
+               path_openat
+               |          
+               |--2.79%--path_init
+               |          nd_jump_root
+               |          set_root
+               |          
+                --2.79%--alloc_empty_file
+                          init_file
+                          security_file_alloc
+                          kmem_cache_alloc_noprof
+
+     5.58%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] exec_binprm
+            |
+            ---exec_binprm
+               load_elf_binary
+               |          
+               |--2.79%--load_elf_interp.isra.0
+               |          elf_load
+               |          vm_mmap
+               |          vm_mmap_pgoff
+               |          do_mmap
+               |          mmap_region
+               |          __mmap_region
+               |          __mmap_setup
+               |          mas_prev
+               |          mas_prev_slot
+               |          
+                --2.79%--elf_load
+                          vm_mmap
+                          vm_mmap_pgoff
+                          do_mmap
+                          mmap_region
+                          __mmap_region
+                          perf_event_mmap
+                          perf_event_mmap_event
+                          perf_iterate_sb.constprop.0
+                          perf_iterate_ctx
+                          perf_event_mmap_output
+                          __perf_event_header__init_id
+                          __task_pid_nr_ns
+
+     5.58%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] load_elf_binary
+            |
+            ---load_elf_binary
+               |          
+               |--2.79%--load_elf_interp.isra.0
+               |          elf_load
+               |          vm_mmap
+               |          vm_mmap_pgoff
+               |          do_mmap
+               |          mmap_region
+               |          __mmap_region
+               |          __mmap_setup
+               |          mas_prev
+               |          mas_prev_slot
+               |          
+                --2.79%--elf_load
+                          vm_mmap
+                          vm_mmap_pgoff
+                          do_mmap
+                          mmap_region
+                          __mmap_region
+                          perf_event_mmap
+                          perf_event_mmap_event
+                          perf_iterate_sb.constprop.0
+                          perf_iterate_ctx
+                          perf_event_mmap_output
+                          __perf_event_header__init_id
+                          __task_pid_nr_ns
+
+     5.58%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] elf_load
+            |
+            ---elf_load
+               vm_mmap
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __mmap_region
+               |          
+               |--2.79%--__mmap_setup
+               |          mas_prev
+               |          mas_prev_slot
+               |          
+                --2.79%--perf_event_mmap
+                          perf_event_mmap_event
+                          perf_iterate_sb.constprop.0
+                          perf_iterate_ctx
+                          perf_event_mmap_output
+                          __perf_event_header__init_id
+                          __task_pid_nr_ns
+
+     5.58%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] path_openat
+            |
+            ---path_openat
+               |          
+               |--2.79%--path_init
+               |          nd_jump_root
+               |          set_root
+               |          
+                --2.79%--alloc_empty_file
+                          init_file
+                          security_file_alloc
+                          kmem_cache_alloc_noprof
+
+     5.58%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] vm_mmap
+            |
+            ---vm_mmap
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __mmap_region
+               |          
+               |--2.79%--__mmap_setup
+               |          mas_prev
+               |          mas_prev_slot
+               |          
+                --2.79%--perf_event_mmap
+                          perf_event_mmap_event
+                          perf_iterate_sb.constprop.0
+                          perf_iterate_ctx
+                          perf_event_mmap_output
+                          __perf_event_header__init_id
+                          __task_pid_nr_ns
+
+     5.58%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] vm_mmap_pgoff
+            |
+            ---vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __mmap_region
+               |          
+               |--2.79%--__mmap_setup
+               |          mas_prev
+               |          mas_prev_slot
+               |          
+                --2.79%--perf_event_mmap
+                          perf_event_mmap_event
+                          perf_iterate_sb.constprop.0
+                          perf_iterate_ctx
+                          perf_event_mmap_output
+                          __perf_event_header__init_id
+                          __task_pid_nr_ns
+
+     5.58%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] do_mmap
+            |
+            ---do_mmap
+               mmap_region
+               __mmap_region
+               |          
+               |--2.79%--__mmap_setup
+               |          mas_prev
+               |          mas_prev_slot
+               |          
+                --2.79%--perf_event_mmap
+                          perf_event_mmap_event
+                          perf_iterate_sb.constprop.0
+                          perf_iterate_ctx
+                          perf_event_mmap_output
+                          __perf_event_header__init_id
+                          __task_pid_nr_ns
+
+     5.58%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] mmap_region
+            |
+            ---mmap_region
+               __mmap_region
+               |          
+               |--2.79%--__mmap_setup
+               |          mas_prev
+               |          mas_prev_slot
+               |          
+                --2.79%--perf_event_mmap
+                          perf_event_mmap_event
+                          perf_iterate_sb.constprop.0
+                          perf_iterate_ctx
+                          perf_event_mmap_output
+                          __perf_event_header__init_id
+                          __task_pid_nr_ns
+
+     5.58%     0.00%  sms_app_x86  sms_app_x86           [.] alert_thread_func
+            |
+            ---alert_thread_func
+               |          
+               |--2.79%--__mq_open (inlined)
+               |          entry_SYSCALL_64_after_hwframe
+               |          do_syscall_64
+               |          x64_sys_call
+               |          __x64_sys_mq_open
+               |          do_mq_open
+               |          mqueue_file_open
+               |          dentry_open
+               |          alloc_empty_file
+               |          init_file
+               |          
+                --2.79%--___mq_timedreceive_time64 (inlined)
+                          ___mq_timedreceive_time64 (inlined)
+                          entry_SYSCALL_64_after_hwframe
+                          do_syscall_64
+                          __x64_sys_mq_timedreceive
+
+     5.00%     5.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] intel_check_word.constprop.0
+            |
+            ---_dl_start_user
+               _dl_start
+               _dl_start_final (inlined)
+               _dl_sysdep_start
+               init_cpu_features (inlined)
+               dl_init_cacheinfo (inlined)
+               handle_intel (inlined)
+               intel_check_word (inlined)
+
+     5.00%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] init_cpu_features (inlined)
+            |
+            ---init_cpu_features (inlined)
+               dl_init_cacheinfo (inlined)
+               handle_intel (inlined)
+               intel_check_word (inlined)
+
+     5.00%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] dl_init_cacheinfo (inlined)
+            |
+            ---dl_init_cacheinfo (inlined)
+               handle_intel (inlined)
+               intel_check_word (inlined)
+
+     5.00%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] handle_intel (inlined)
+            |
+            ---handle_intel (inlined)
+               intel_check_word (inlined)
+
+     5.00%     0.00%  sms_app_x86  ld-linux-x86-64.so.2  [.] intel_check_word (inlined)
+            |
+            ---intel_check_word (inlined)
+
+     2.79%     2.79%  sms_app_x86  [kernel.kallsyms]     [k] __task_pid_nr_ns
+            |
+            ---0x7411050ef03b
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_execve
+               do_execveat_common.isra.0
+               bprm_execve
+               bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+               elf_load
+               vm_mmap
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __mmap_region
+               perf_event_mmap
+               perf_event_mmap_event
+               perf_iterate_sb.constprop.0
+               perf_iterate_ctx
+               perf_event_mmap_output
+               __perf_event_header__init_id
+               __task_pid_nr_ns
+
+     2.79%     2.79%  sms_app_x86  [kernel.kallsyms]     [k] __x64_sys_mq_timedreceive
+            |
+            ---__clone3 (inlined)
+               start_thread
+               alert_thread_func
+               ___mq_timedreceive_time64 (inlined)
+               ___mq_timedreceive_time64 (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               __x64_sys_mq_timedreceive
+
+     2.79%     2.79%  sms_app_x86  [kernel.kallsyms]     [k] __x64_sys_mq_unlink
+            |
+            ---__clone3 (inlined)
+               start_thread
+               __mq_unlink (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               __x64_sys_mq_unlink
+
+     2.79%     2.79%  sms_app_x86  [kernel.kallsyms]     [k] dequeue_task_rt
+            |
+            ---__clone3 (inlined)
+               start_thread
+               sensor_thread_func
+               __clock_nanosleep (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_clock_nanosleep
+               common_nsleep_timens
+               hrtimer_nanosleep
+               do_nanosleep
+               schedule
+               __schedule
+               try_to_block_task.constprop.0.isra.0
+               dequeue_task
+               dequeue_task_rt
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] common_nsleep_timens
+            |
+            ---common_nsleep_timens
+               hrtimer_nanosleep
+               do_nanosleep
+               schedule
+               __schedule
+               try_to_block_task.constprop.0.isra.0
+               dequeue_task
+               dequeue_task_rt
+
+     2.79%     2.79%  sms_app_x86  [kernel.kallsyms]     [k] exit_to_user_mode_loop
+            |
+            ---__clone3 (inlined)
+               start_thread
+               sensor_thread_func
+               __clock_nanosleep (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               exit_to_user_mode_loop
+
+     2.79%     2.79%  sms_app_x86  [kernel.kallsyms]     [k] set_root
+            |
+            ---__clone3 (inlined)
+               start_thread
+               processor_thread_func
+               log_message
+               _IO_new_fopen (inlined)
+               __fopen_internal (inlined)
+               _IO_new_file_fopen (inlined)
+               _IO_file_open
+               __libc_open64 (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_openat
+               do_sys_openat2
+               do_file_open
+               path_openat
+               path_init
+               nd_jump_root
+               set_root
+
+     2.79%     2.79%  sms_app_x86  [kernel.kallsyms]     [k] filemap_map_pages
+            |
+            ---__clone3 (inlined)
+               start_thread
+               __res_thread_freeres
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_fault
+               do_read_fault
+               filemap_map_pages
+
+     2.79%     2.79%  sms_app_x86  [kernel.kallsyms]     [k] mas_prev_slot
+            |
+            ---0x7411050ef03b
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_execve
+               do_execveat_common.isra.0
+               bprm_execve
+               bprm_execve.part.0
+               exec_binprm
+               load_elf_binary
+               load_elf_interp.isra.0
+               elf_load
+               vm_mmap
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __mmap_region
+               __mmap_setup
+               mas_prev
+               mas_prev_slot
+
+     2.79%     2.79%  sms_app_x86  libc.so.6             [.] __GI___stat64
+            |
+            ---__clone3 (inlined)
+               start_thread
+               __stat64 (inlined)
+
+     2.79%     2.79%  sms_app_x86  libc.so.6             [.] __printf_buffer_write
+            |
+            ---__clone3 (inlined)
+               start_thread
+               processor_thread_func
+               __snprintf (inlined)
+               __vsnprintf_internal
+               __printf_buffer_snprintf_done (inlined)
+               __printf_buffer
+               __printf_buffer_write
+
+     2.79%     2.79%  sms_app_x86  libc.so.6             [.] pthread_cond_wait@@GLIBC_2.3.2
+            |
+            ---__clone3 (inlined)
+               start_thread
+               processor_thread_func
+               cb_pop
+               __futex_abstimed_wait_cancelable64 (inlined)
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] __mmap_setup
+            |
+            ---__mmap_setup
+               mas_prev
+               mas_prev_slot
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] __perf_event_header__init_id
+            |
+            ---__perf_event_header__init_id
+               __task_pid_nr_ns
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] __x64_sys_mq_open
+            |
+            ---__x64_sys_mq_open
+               do_mq_open
+               mqueue_file_open
+               dentry_open
+               alloc_empty_file
+               init_file
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] dentry_open
+            |
+            ---dentry_open
+               alloc_empty_file
+               init_file
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] getname_flags
+            |
+            ---getname_flags
+               do_getname
+               kmem_cache_alloc_noprof
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] do_getname
+            |
+            ---do_getname
+               kmem_cache_alloc_noprof
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] do_mq_open
+            |
+            ---do_mq_open
+               mqueue_file_open
+               dentry_open
+               alloc_empty_file
+               init_file
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] do_read_fault
+            |
+            ---do_read_fault
+               filemap_map_pages
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] hrtimer_nanosleep
+            |
+            ---hrtimer_nanosleep
+               do_nanosleep
+               schedule
+               __schedule
+               try_to_block_task.constprop.0.isra.0
+               dequeue_task
+               dequeue_task_rt
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] do_nanosleep
+            |
+            ---do_nanosleep
+               schedule
+               __schedule
+               try_to_block_task.constprop.0.isra.0
+               dequeue_task
+               dequeue_task_rt
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] __schedule
+            |
+            ---__schedule
+               try_to_block_task.constprop.0.isra.0
+               dequeue_task
+               dequeue_task_rt
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] load_elf_interp.isra.0
+            |
+            ---load_elf_interp.isra.0
+               elf_load
+               vm_mmap
+               vm_mmap_pgoff
+               do_mmap
+               mmap_region
+               __mmap_region
+               __mmap_setup
+               mas_prev
+               mas_prev_slot
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] mas_prev
+            |
+            ---mas_prev
+               mas_prev_slot
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] mqueue_file_open
+            |
+            ---mqueue_file_open
+               dentry_open
+               alloc_empty_file
+               init_file
+
+     2.79%     0.00%  sms_app_x86  libc.so.6             [.] __res_thread_freeres
+            |
+            ---__res_thread_freeres
+               asm_exc_page_fault
+               exc_page_fault
+               do_user_addr_fault
+               handle_mm_fault
+               __handle_mm_fault
+               handle_pte_fault
+               do_fault
+               do_read_fault
+               filemap_map_pages
+
+     2.79%     0.00%  sms_app_x86  libc.so.6             [.] __libc_malloc (inlined)
+            |
+            ---__libc_malloc (inlined)
+               tcache_init (inlined)
+               arena_get2 (inlined)
+               _int_new_arena (inlined)
+               new_heap (inlined)
+               __mprotect
+               asm_exc_page_fault
+
+     2.79%     0.00%  sms_app_x86  libc.so.6             [.] tcache_init (inlined)
+            |
+            ---tcache_init (inlined)
+               arena_get2 (inlined)
+               _int_new_arena (inlined)
+               new_heap (inlined)
+               __mprotect
+               asm_exc_page_fault
+
+     2.79%     0.00%  sms_app_x86  libc.so.6             [.] __snprintf (inlined)
+            |
+            ---__snprintf (inlined)
+               __vsnprintf_internal
+               __printf_buffer_snprintf_done (inlined)
+               __printf_buffer
+               __printf_buffer_write
+
+     2.79%     0.00%  sms_app_x86  libc.so.6             [.] arena_get2 (inlined)
+            |
+            ---arena_get2 (inlined)
+               _int_new_arena (inlined)
+               new_heap (inlined)
+               __mprotect
+               asm_exc_page_fault
+
+     2.79%     0.00%  sms_app_x86  libc.so.6             [.] __vsnprintf_internal
+            |
+            ---__vsnprintf_internal
+               __printf_buffer_snprintf_done (inlined)
+               __printf_buffer
+               __printf_buffer_write
+
+     2.79%     0.00%  sms_app_x86  libc.so.6             [.] _int_new_arena (inlined)
+            |
+            ---_int_new_arena (inlined)
+               new_heap (inlined)
+               __mprotect
+               asm_exc_page_fault
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] path_init
+            |
+            ---path_init
+               nd_jump_root
+               set_root
+
+     2.79%     0.00%  sms_app_x86  libc.so.6             [.] __printf_buffer_snprintf_done (inlined)
+            |
+            ---__printf_buffer_snprintf_done (inlined)
+               __printf_buffer
+               __printf_buffer_write
+
+     2.79%     0.00%  sms_app_x86  libc.so.6             [.] new_heap (inlined)
+            |
+            ---new_heap (inlined)
+               __mprotect
+               asm_exc_page_fault
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] nd_jump_root
+            |
+            ---nd_jump_root
+               set_root
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] perf_iterate_ctx
+            |
+            ---perf_iterate_ctx
+               perf_event_mmap_output
+               __perf_event_header__init_id
+               __task_pid_nr_ns
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] schedule
+            |
+            ---schedule
+               __schedule
+               try_to_block_task.constprop.0.isra.0
+               dequeue_task
+               dequeue_task_rt
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] security_file_alloc
+            |
+            ---security_file_alloc
+               kmem_cache_alloc_noprof
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] try_to_block_task.constprop.0.isra.0
+            |
+            ---try_to_block_task.constprop.0.isra.0
+               dequeue_task
+               dequeue_task_rt
+
+     2.79%     0.00%  sms_app_x86  [kernel.kallsyms]     [.] dequeue_task
+            |
+            ---dequeue_task
+               dequeue_task_rt
+
+     2.79%     0.00%  sms_app_x86  libc.so.6             [.] ___mq_timedreceive_time64 (inlined)
+            |
+            ---___mq_timedreceive_time64 (inlined)
+               ___mq_timedreceive_time64 (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               __x64_sys_mq_timedreceive
+
+     2.79%     0.00%  sms_app_x86  libc.so.6             [.] __mprotect
+            |
+            ---__mprotect
+               asm_exc_page_fault
+
+     2.79%     0.00%  sms_app_x86  libc.so.6             [.] __mq_open (inlined)
+            |
+            ---__mq_open (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               x64_sys_call
+               __x64_sys_mq_open
+               do_mq_open
+               mqueue_file_open
+               dentry_open
+               alloc_empty_file
+               init_file
+
+     2.79%     0.00%  sms_app_x86  libc.so.6             [.] __mq_unlink (inlined)
+            |
+            ---__mq_unlink (inlined)
+               entry_SYSCALL_64_after_hwframe
+               do_syscall_64
+               __x64_sys_mq_unlink
+
+     2.79%     0.00%  sms_app_x86  libc.so.6             [.] __printf_buffer
+            |
+            ---__printf_buffer
+               __printf_buffer_write
+
+     2.79%     0.00%  sms_app_x86  libc.so.6             [.] __futex_abstimed_wait_cancelable64 (inlined)
+            |
+            ---__futex_abstimed_wait_cancelable64 (inlined)
+
+     2.79%     0.00%  sms_app_x86  libc.so.6             [.] __stat64 (inlined)
+            |
+            ---__stat64 (inlined)
+
+     2.79%     0.00%  sms_app_x86  sms_app_x86           [.] cb_pop
+            |
+            ---cb_pop
+               __futex_abstimed_wait_cancelable64 (inlined)
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
